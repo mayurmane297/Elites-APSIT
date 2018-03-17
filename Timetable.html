@@ -22,6 +22,17 @@
                 background-color:black;
                 color:white;
             }
+            .center {
+                margin: auto;
+                width: 100%;
+                padding: 10px;
+            }
+            .dropdown-menu {
+                left: 50%;
+                right: auto;
+                text-align: center;
+                transform: translate(-50%, 0);
+            }
         </style>
     </head>
 
@@ -219,13 +230,13 @@
                         <div class="modal-body">
                             <form class="form-horizontal" action="/action_page.php">
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="time">Time: </label>
-                                    <div class="col-sm-3">
+                                    <label class="control-label col-sm-4" for="time">Time: </label>
+                                    <div class="col-sm-5">
                                         <input type="time" class="form-control" id="time" value="00:00:00">
                                     </div>
                                 </div>
                                 <div class="dropdown">
-                                    <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown">Status
+                                    <button class="btn dropdown-toggle center" type="button" data-toggle="dropdown">Status
                                         <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Free</a></li>
@@ -233,8 +244,9 @@
                                         <li><a href="#">Practical</a></li>
                                         <li><a href="#">Supervision</a></li>
                                         <li><a href="#">Assessment</a></li>
-                                    </ul>
+                                    </ul>                                    
                                 </div>
+                                <p><br></p>
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="comments">Comments: </label>
                                     <div class="col-sm-10"> 
