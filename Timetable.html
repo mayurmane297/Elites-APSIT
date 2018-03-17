@@ -49,6 +49,9 @@
                     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Timetable</button>
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Edit</button>
                 </div>
+                <button type="Button" class="btn btn-info btn-lg" id="add"><a href="#"><span class="glyphicon glyphicon-plus"></span></a></button>
+                <div id="newtt">
+                </div>
             </div>
             <div>
                 <a>ID: 6548<br></a>
@@ -229,10 +232,15 @@
                         </div>
                         <div class="modal-body">
                             <form class="form-horizontal" action="/action_page.php">
+                                <a>Time:</a>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-4" for="time">Time: </label>
+                                    <label class="control-label col-sm-4" for="time">from: </label>
                                     <div class="col-sm-5">
-                                        <input type="time" class="form-control" id="time" value="00:00:00">
+                                        <input type="time" class="form-control" id="timefrom" value="00:00:00">
+                                    </div>
+                                    <label class="control-label col-sm-4" for="time">To: </label>
+                                    <div class="col-sm-5">
+                                        <input type="time" class="form-control" id="timeto" value="00:00:00">
                                     </div>
                                 </div>
                                 <div class="dropdown">
@@ -253,6 +261,7 @@
                                         <input type="text" class="form-control" id="comments" placeholder="Comments (Optional)">
                                     </div>
                                 </div>
+                                <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -262,7 +271,10 @@
         </div> 
         <script>
             $(document).ready(function(){
-                $('[data-toggle="popover"]').popover();   
+                var i = 1;
+                $("#add").click(function () {
+                    $("#newtt").append('<button type="Button" class="btn btn-link" id="add" data-toggle="modal" data-target="#myModal2">Custom Timetable '+ i++ +'</button>');
+                }); 
             });
         </script>
     </body>
