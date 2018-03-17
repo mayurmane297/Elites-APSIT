@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leave Application</title>
+    </head>
+    <body>
+        <div>
+            <div>
+                Application For Leave
+            </div>
+            <div>
+                <label>Deprtment</label>
+                <input type="text">
+                <label>Type of Leave</label>
+                <input type="text">
+            </div>
+            <div>
+                <label>Period of Leave</label>
+                <input type="number"> days
+                From <input type="date"> To <input type="date">
+            </div>
+            <div>
+                First Half<input type="radio" name="period" value="firstHalf">
+                Second Half<input type="radio" name="period" value="secondHalf">
+                (If appicable)
+            </div>
+            <div>
+                <label>Statu of leave</label><br>
+                <form>
+                    <input type="radio" name="status" value="proposed" checked> Proposed<br>
+                    <input type="radio" name="status" value="availed" > Availed<br>
+                </form> 
+                <label>No. of days Passed after availing the leave:</label> <input type="number">
+            </div>
+            <div>
+                <label>Reason of leave</label>
+                <textarea placeholder="Provide Reason of leave" ></textarea>
+            </div>
+            <div>
+                <label>Number of leaves availed already</label>
+                <input type="number">
+            </div>
+        </div>    
+    </body>
+</html>
