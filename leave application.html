@@ -1,45 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Leave Application</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            .jumbotron{
+                padding-top: 15px;
+                padding-bottom: 15px;
+                background-color:#2E2D88;
+                color:white;
+            }
+            .btn-md{
+                padding: 20px 20px;
+                font-size: 20px;
+                border-radius: 10px;
+                width:100%;  
+            }  
+
+            .center {
+                margin: auto;
+                width: 100%;
+                padding: 10px;
+            }
+            div.Options{
+    cursor:pointer;
+    display:inline-block;
+    position:relative;
+    font:medium 11px/22px Arial, Sans-Serif;
+    color:black;
+    border:5px solid #ccc;
+}   
+
+        </style>
     </head>
     <body>
-        <div>
-            <div>
-                Application For Leave
+
+        <div class="container">
+            <div class="jumbotron">
+                <h3> Application For Leave</h3>
             </div>
+
             <div>
-                <label>Deprtment</label>
-                <input type="text">
-                <label>Type of Leave</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Period of Leave</label>
-                <input type="number"> days
-                From <input type="date"> To <input type="date">
-            </div>
-            <div>
-                First Half<input type="radio" name="period" value="firstHalf">
-                Second Half<input type="radio" name="period" value="secondHalf">
-                (If appicable)
-            </div>
-            <div>
-                <label>Statu of leave</label><br>
-                <form>
-                    <input type="radio" name="status" value="proposed" checked> Proposed<br>
-                    <input type="radio" name="status" value="availed" > Availed<br>
-                </form> 
-                <label>No. of days Passed after availing the leave:</label> <input type="number">
-            </div>
-            <div>
-                <label>Reason of leave</label>
-                <textarea placeholder="Provide Reason of leave" ></textarea>
-            </div>
-            <div>
-                <label>Number of leaves availed already</label>
-                <input type="number">
-            </div>
-        </div>    
-    </body>
-</html>
+
+                <div>
+                    <h4>Name of the Faculty & Designation:</h4>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="text" placeholder="Enter name and designation" name="text">
+                    </div>
+                    <div class="btn-group">
+
+                        <button class="btn btn-info dropdown-toggle btn-sm center" id="btn1" type="button" data-toggle="dropdown">Department <br><span class="caret"></span></button>
+                        <ul id="btn4" class="dropdown-menu">
+                            <li><a href="#">COMPUTER</a></li>
+                            <li><a href="#">IT</a></li>
+                            <li><a href="#">CIVIL</a></li> 
+                            <li><a href="#">MECHNICAL</a></li>
+                            <li><a href="#">EXTC</a></li>
+                        </ul>
+                        <script>
+                            $(function(){
+
+                                $("#btn4 li a").click(function(){
+
+                                    $("#btn1").text($(this).text());
+                                    $("#btn1").val($(this).text());
+
+                                });
+
+                            });          
+                        </script>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <H4><B> Type of Leave</B></H4>
+                        <div class="Options">
+                        <select>
+                                        <option selected>Choose...</option>
+                                        <option value="1">CL</option>
+                                        <option value="2">EL</option>
+                                        <option value>OD</option>
+                                        <option value="1">OL        </option>
+                                        
+                                     
+                                    </select> 
+                            </div>
+                                    
+                                    <script>
+                                        $(function(){
+
+                                            $("#btn3 li a").click(function(){
+
+                                                $("#btn2").text($(this).text());
+                                                $("#btn2").val($(this).text());
+
+                                            });
+
+                                        });          
+                                    </script>
+
+                                </div>
+                               
+                            <br>        
+                        <form class="form-horizontal" action="/action_page.php">
+                            <div class="form-group">
+                                <label class="control-label " for="date"></label>
+                                <div class="col-sm-2">
+                                    Date:<input type="date" class="form-control" id="date">       
+                                </div>
+                            </div>
+                            <p class="text-danger">*Applicable only in case of half day leave</p>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h5>
+                                        <label class="custom-control custom-radio">
+                                            *First Half:<input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input"> 
+                                        </label></h5>
+                                </div>
+
+                                <div class="col">
+                                    <h5><label class="custom-control custom-radio">
+                                        *Second Half:<input id="radioStacked" name="radio-stacked" type="radio" class="custom-control-input"> 
+                                        </label></h5>
+
+                                </div><div class="col">
+
+                                </div>
+                                <div>
+                                    <h4><B>Status of leave</B></h4>
+                                    <label class="custom-control custom-radio"></label>
+                                    <form class="form-horizontal">
+                                        <input id="radioStacked" name="status" type="radio" checked> <B>Proposed</B><br>
+                                        <input id="radioStacked" name="status" type="radio"><B>Availed</B><br><br>
+                                    </form> 
+                                    <label><h5>No. of days Passed after availing the leave:</h5></label> <input type="number">
+                                </div>
+
+
+                                <div>
+                                    <label>Reason of leave</label>
+                                    <input type="text" class="form-control" id="text" placeholder="Provide reason to leave" name="text"><br>
+                                </div>
+                                <div>
+                                    <label>Number of leaves availed already</label>
+                                    <input type="number">
+                                </div>
+                                
+                            </div>
+
+                            </div>
+                        </body>
+                    </html>
