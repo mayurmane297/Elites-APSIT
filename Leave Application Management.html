@@ -34,7 +34,7 @@
                     <form class="form-horizontal" action="/action_page.php">
                         <label class="control-label" for="name">Name: </label>
                         <div>
-                            <input type="text" class="form-control" id="name" value="Alex" REQUIRED>
+                            <input type="text" class="form-control" id="name" placeholder="Ezio Auditore De Firenze" REQUIRED>
                         </div>
                         <p><br></p>
                         <div class="dropdown">
@@ -80,27 +80,24 @@
                     <p><br></p>
                     <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
-
-
-
-
-
             </div>
-            <script>
-                $(function(){
-                    $("#btn4 li a").click(function(){
-                        $("#btn3").text($(this).text());
-                        $("#btn3").val($(this).text());
-                    });
-                    $("#btn2 li a").click(function(){
-                        $("#btn1").text($(this).text());
-                        $("#btn1").val($(this).text());
-                    });
-                    $("#btn6 li a").click(function(){
-                        $("#btn5").text($(this).text());
-                        $("#btn5").val($(this).text());
-                    });
+        </div>
+        <script>
+            $(function(){
+                $("#btn4 li a").click(function(){
+                    $("#btn3").text($(this).text());
+                    $("#btn3").val($(this).text());
                 });
-            </script>
-            </body>
-        </html>
+                $("#btn2 li a").click(function(){
+                    $("#btn1").text($(this).text());
+                    $("#btn1").val($(this).text());
+                });
+                $("#btn6 li a").click(function(){
+                    $("#btn5").text($(this).text());
+                    $("#btn5").val($(this).text());
+                });
+            });
+        </script>
+    </body>
+</html>
+
